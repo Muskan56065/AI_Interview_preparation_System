@@ -1,30 +1,132 @@
 
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Candidate Profile | AI Interview Preparation</title>
+
+    <link rel="stylesheet" href="{% static 'view_profile.css' %}">
 </head>
+
 <body>
 
-<h2>Candidate Profile</h2>
+    <div class="view-profile-page">
 
-{% if profile %}
+        <div class="view-profile-container">
 
-<p>Name: {{ profile.full_name }}</p>
-<p>Phone: {{ profile.phone }}</p>
-<p>Education: {{ profile.education }}</p>
-<p>Experience: {{ profile.experience }}</p>
-<p>Skills: {{ profile.skills }}</p>
-<p>Target Role: {{ profile.target_role }}</p>
+            <div class="view-profile-heading">
+                <h1>My Profile</h1>
+                <p>View and manage your candidate information</p>
+            </div>
 
-<a href="{% url 'create_profile' %}">Edit Profile</a>
+            {% if profile %}
 
-{% else %}
+            <div class="view-profile-card">
 
-<p>No profile created yet.</p>
-<a href="{% url 'create_profile' %}">Create Profile</a>
+                <!-- Profile Header -->
+                <div class="view-profile-header">
 
-{% endif %}
+                    <div class="profile-avatar">
+                        {{ profile.full_name|first|upper }}
+                    </div>
+
+                    <div class="profile-basic-info">
+                        <h2>{{ profile.full_name }}</h2>
+                        <p>{{ profile.target_role }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Profile Details -->
+                <h3 class="profile-section-title">
+                    Personal Information
+                </h3>
+
+                <div class="profile-details-grid">
+
+                    <div class="profile-detail">
+                        <label>Full Name</label>
+                        <p>{{ profile.full_name }}</p>
+                    </div>
+
+                    <div class="profile-detail">
+                        <label>Phone Number</label>
+                        <p>{{ profile.phone }}</p>
+                    </div>
+
+                    <div class="profile-detail">
+                        <label>Education</label>
+                        <p>{{ profile.education }}</p>
+                    </div>
+
+                    <div class="profile-detail">
+                        <label>Experience</label>
+                        <p>{{ profile.experience }} years</p>
+                    </div>
+
+                    <div class="profile-detail">
+                        <label>Target Job Role</label>
+                        <p>{{ profile.target_role }}</p>
+                    </div>
+
+                    <div class="profile-detail">
+                        <label>Skills</label>
+                        <p>{{ profile.skills }}</p>
+                    </div>
+
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="profile-action-buttons">
+
+                    <button type="button"
+                            class="profile-btn print-profile-btn"
+                            id="printProfileBtn">
+                        Print Profile
+                    </button>
+
+                    <a href="{% url 'create_profile' %}"
+                       class="profile-btn edit-profile-btn"
+                       id="editProfileBtn">
+                        Edit Profile
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <!-- Profile Not Available -->
+            <div class="empty-profile-message">
+
+                <h2>Profile Not Found</h2>
+
+                <p>
+                    You have not created your candidate profile yet.
+                    Please create your profile to continue.
+                </p>
+
+                <br>
+
+                <a href="{% url 'create_profile' %}"
+                   class="profile-btn edit-profile-btn">
+                    Create Profile
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <script src="{% static 'view_profile.js' %}"></script>
 
 </body>
 </html>

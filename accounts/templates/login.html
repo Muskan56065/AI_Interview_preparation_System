@@ -1,29 +1,71 @@
+
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AI Interview Preparation</title>
+
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
+
 <body>
 
-<h2>Login</h2>
+    <div class="login-container">
 
-<form method="POST">
-    {% csrf_token %}
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Login to your AI Interview Preparation account</p>
+        </div>
 
-    <input type="text" name="username"
-           placeholder="Username" required><br><br>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
 
-    <input type="password" name="password"
-           placeholder="Password" required><br><br>
+        <form method="POST" id="loginForm">
+            {% csrf_token %}
 
-    <button type="submit">Login</button>
-</form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+            </div>
 
-<a href="{% url 'register' %}">Create Account</a>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
 
-{% for message in messages %}
-    <p>{{ message }}</p>
-{% endfor %}
+            <button type="submit" class="login-button">
+                Login
+            </button>
+
+        </form>
+
+        <div class="login-footer">
+            Don't have an account?
+            <a href="{% url 'register' %}">Create Account</a>
+        </div>
+
+    </div>
+
+    <script src="{% static 'login.js' %}"></script>
 
 </body>
 </html>

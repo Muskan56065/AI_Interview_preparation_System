@@ -1,0 +1,212 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview Preparation System</title>
+
+    <!-- Home Page CSS -->
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="home-navbar">
+
+        <div class="home-logo">
+            AI Interview Prep
+        </div>
+
+        <div class="home-nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}" class="nav-register">
+                Register
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+            <h1>
+                Prepare Smarter.<br>
+                Perform Better.<br>
+                Get Interview Ready.
+            </h1>
+
+            <p>
+                Take your interview preparation to the next level
+                with our AI-powered platform. Practice technical
+                questions, analyze your resume, receive intelligent
+                feedback and improve your interview skills.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'register' %}" class="primary-btn">
+                    Get Started
+                </a>
+
+                <a href="{% url 'login' %}" class="secondary-btn">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+
+        <h2 class="section-heading">
+            Explore Our Features
+        </h2>
+
+        <p class="section-description">
+            Everything you need to prepare confidently for your next interview.
+        </p>
+
+        <div class="features-grid">
+
+            <!-- Feature 1 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">👤</div>
+
+                <h3>Candidate Profile</h3>
+
+                <p>
+                    Create your professional profile with your
+                    education, experience, skills and career goals.
+                </p>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">📄</div>
+
+                <h3>Resume Analysis</h3>
+
+                <p>
+                    Analyze your resume and identify areas
+                    that can be improved for your target role.
+                </p>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">💻</div>
+
+                <h3>Technical Practice</h3>
+
+                <p>
+                    Practice technical interview questions
+                    based on your selected job role.
+                </p>
+
+            </div>
+
+
+            <!-- Feature 4 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">🤖</div>
+
+                <h3>AI Answer Evaluation</h3>
+
+                <p>
+                    Receive AI-powered feedback on your answers
+                    and understand where you can improve.
+                </p>
+
+            </div>
+
+
+            <!-- Feature 5 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">🎯</div>
+
+                <h3>Mock Interviews</h3>
+
+                <p>
+                    Experience interview-style practice
+                    and improve your confidence.
+                </p>
+
+            </div>
+
+
+            <!-- Feature 6 -->
+            <div class="feature-card">
+
+                <div class="feature-icon">📊</div>
+
+                <h3>Progress Tracking</h3>
+
+                <p>
+                    Monitor your preparation progress
+                    and review your performance over time.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+        <h2>About Our Platform</h2>
+
+        <p>
+            AI Interview Preparation System is designed to help
+            candidates prepare for job interviews through structured
+            practice and AI-powered evaluation. Our goal is to make
+            interview preparation more accessible, organized and effective.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="home-footer">
+
+        <p>
+            &copy; 2026 AI Interview Preparation System.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Home Page JavaScript -->
+    <script src="{% static 'home.js' %}"></script>
+
+</body>
+
+</html>
