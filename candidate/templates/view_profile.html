@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+</head>
+<body>
+
+<h2>Candidate Profile</h2>
+
+{% if profile %}
+
+<p>Name: {{ profile.full_name }}</p>
+<p>Phone: {{ profile.phone }}</p>
+<p>Education: {{ profile.education }}</p>
+<p>Experience: {{ profile.experience }}</p>
+<p>Skills: {{ profile.skills }}</p>
+<p>Target Role: {{ profile.target_role }}</p>
+
+<a href="{% url 'create_profile' %}">Edit Profile</a>
+
+{% else %}
+
+<p>No profile created yet.</p>
+<a href="{% url 'create_profile' %}">Create Profile</a>
+
+{% endif %}
+
+</body>
+</html>
