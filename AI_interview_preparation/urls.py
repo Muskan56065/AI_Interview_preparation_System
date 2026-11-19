@@ -23,4 +23,5 @@ urlpatterns = [
     path('', accounts_views.home, name='home'),
     path('accounts/',include('accounts.urls')),
     path('candidate/', include('candidate.urls')),
+    path('questions/', include('question_bank.urls')),
 ]

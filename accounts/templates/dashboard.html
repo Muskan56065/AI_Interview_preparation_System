@@ -1,4 +1,4 @@
-
+```html
 {% load static %}
 
 <!DOCTYPE html>
@@ -22,6 +22,7 @@
         <a href="{% url 'logout' %}" id="logoutButton">
             Logout
         </a>
+    
 
     </nav>
 
@@ -48,6 +49,7 @@
 
         <section class="dashboard-grid">
 
+            <!-- Candidate Profile -->
             <div class="dashboard-card">
                 <h3>Candidate Profile</h3>
                 <p>
@@ -59,6 +61,7 @@
                 </a>
             </div>
 
+            <!-- View Profile -->
             <div class="dashboard-card">
                 <h3>View Profile</h3>
                 <p>
@@ -70,14 +73,27 @@
                 </a>
             </div>
 
+            <!-- Interview Preparation -->
             <div class="dashboard-card">
                 <h3>Interview Preparation</h3>
                 <p>
                     Practice technical interview questions
                     and improve your interview readiness.
                 </p>
-                <a href="{% url 'view_profile' %}">
-                    Get Started
+                <a href="#" class="disabled-link">
+                    Coming Soon
+                </a>
+            </div>
+
+            <!-- Question Bank -->
+            <div class="dashboard-card">
+                <h3>Question Bank</h3>
+                <p>
+                    Explore technical interview questions based
+                    on your selected job role and skills.
+                </p>
+                <a href="{% url 'question_list' %}">
+                    Explore Questions
                 </a>
             </div>
 
@@ -85,6 +101,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="dashboard-footer">
         <p>AI Interview Preparation System</p>
     </footer>

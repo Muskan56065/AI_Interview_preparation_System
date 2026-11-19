@@ -48,10 +48,22 @@ def user_login(request):
         )
 
         if user is not None:
-            login(request, user)
-            return redirect('dashboard')
 
-        messages.error(request, 'Invalid username or password')
+            login(request, user)
+
+            if user.is_superuser:
+                return redirect('admin:index')
+
+            elif user.is_staff:
+                return redirect('admin:index')
+
+            else:
+                return redirect('dashboard')
+
+        else:
+            return render(request, 'login.html', {
+                'error': 'Invalid username or password'
+            })
 
     return render(request, 'login.html')
 

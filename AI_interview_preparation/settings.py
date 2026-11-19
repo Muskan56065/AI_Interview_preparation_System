@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts','candidate',
-]
+    'accounts','candidate','question_bank',]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
